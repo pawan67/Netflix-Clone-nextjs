@@ -1,4 +1,4 @@
-import { Head } from "next/document";
+
 import React, { useRef } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useUserContext } from "../context/userContext";
