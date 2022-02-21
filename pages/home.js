@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import { useUserContext } from "../context/userContext";
 
 function HomePage() {
   const { logOutUser, user } = useUserContext();
   const router = useRouter();
-  if (user == null) {
-    router.push("/");
-  }
+  useEffect(() => {
+    if (user == null) {
+      router.push("/");
+    }
+  });
   console.log(user);
 
   return (

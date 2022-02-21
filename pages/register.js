@@ -14,17 +14,16 @@ import Head from "next/head";
 // ..
 
 function Register() {
+  const router = useRouter();
   useEffect(() => {
     AOS.init();
+    if (sign != null) {
+      router.push("/home");
+    }
   });
-  const router = useRouter();
 
   const { sign, setSign } = useUserContext();
 
-  if(sign != null){
-    router.push('/home')
-  }
-  
   return (
     <div>
       <Head>

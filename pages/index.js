@@ -10,9 +10,11 @@ export default function Home() {
   const { user } = useUserContext();
   // console.log(user);
   const router = useRouter();
-  if (user != null) {
-    router.push("/home");
-  }
+  useEffect(() => {
+    if (user != null) {
+      router.push("/home");
+    }
+  });
   return (
     <div>
       <Head>
