@@ -6,6 +6,7 @@ import Welcome from "../components/home/Welcome";
 import AccordianPage from "../components/home/AccordianPage";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 export default function Home() {
   const { user } = useUserContext();
   // console.log(user);

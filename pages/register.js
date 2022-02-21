@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { useUserContext } from "../context/userContext";
 import SignUp from "../components/SignupComponent";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import SigninComponent from "../components/SigninComponent";
