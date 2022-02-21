@@ -1,8 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import { MdArrowForwardIos } from "react-icons/md";
+import { useUserContext } from "../../context/userContext";
 
 function Welcome() {
+  const {sign, setSign} = useUserContext()
   return (
     <div>
       <div className=" bg-welcome h-screen  ">
@@ -11,7 +13,7 @@ function Welcome() {
           <Link href="/">
             <div>
               <img
-                className=" cursor-pointer w-28  md:w-44"
+                className=" z-50 cursor-pointer w-28  md:w-44"
                 src="images/netflix.png"
                 alt=""
               />
@@ -19,7 +21,7 @@ function Welcome() {
           </Link>
           <div>
             <Link href="/register">
-              <button className=" active:scale-95 md:mr-5 px-4 py-1 text-sm sm:text-lg  rounded-[3px] bg-[#f40612] text-white ">
+              <button onClick={()=> setSign(true)} className=" active:scale-95 md:mr-5 px-4 py-1 text-sm sm:text-lg  rounded-[3px] bg-[#f40612] text-white ">
                 Sign in
               </button>
             </Link>
@@ -45,7 +47,7 @@ function Welcome() {
                 placeholder="Email address"
               />
               <Link href="/register">
-                <div className=" active:bg-[#f40612]/50 cursor-pointer mx-auto sm:mx-auto mt-10 sm:mt-0 rounded-r-sm w-32 text-sm sm:w-64 sm:py-4 sm:text-2xl py-2 justify-center rounded-l-sm sm:rounded-l-none bg-[#f40612] flex items-center">
+                <div onClick={()=> setSign(false)} className=" active:bg-[#f40612]/50 cursor-pointer mx-auto sm:mx-auto mt-10 sm:mt-0 rounded-r-sm w-32 text-sm sm:w-64 sm:py-4 sm:text-2xl py-2 justify-center rounded-l-sm sm:rounded-l-none bg-[#f40612] flex items-center">
                   Get Started
                   <MdArrowForwardIos className=" ml-3" />
                 </div>

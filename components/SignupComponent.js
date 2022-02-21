@@ -1,12 +1,15 @@
+import { useRouter } from "next/router";
 import React, { useRef } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useUserContext } from "../context/userContext";
 function SignUp() {
+  const router = useRouter();
+
   const emailRef = useRef();
   const nameRef = useRef();
   const passwordRef = useRef();
   const { sign, setSign } = useUserContext();
-  const { registerUser, error, signInWithGoogle } = useUserContext();
+  const { registerUser, error, signInWithGoogle, user } = useUserContext();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -16,11 +19,14 @@ function SignUp() {
     if (email && name && password) {
       registerUser(email, name, password);
     }
+    if (user != null) {
+      router.push("/home");
+    }
   };
   return (
     <div>
       <div
-        data-aos="zoom-in"
+        data-aos="fade-right"
         className=" text-white mx-auto p-16  bg-black/50 backdrop-blur-md rounded-2xl shadow-xl shadow-[#070000] w-full sm:w-[460px] "
       >
         <h1 className=" text-white text-2xl font-medium mb-5">Sign Up</h1>
@@ -57,14 +63,20 @@ function SignUp() {
         >
           Already have account Sign in
         </p>
-        <div onClick={()=> signInWithGoogle()} className=" text-base cursor-pointer mt-5 space-x-1 flex items-center ">
+        <div
+          onClick={() => signInWithGoogle()}
+          className=" text-base cursor-pointer mt-5 space-x-1 flex items-center "
+        >
           <p className=" underline  ">Sign up with Google</p>{" "}
           <FcGoogle className=" text-xl" />
         </div>
 
         <p className=" mt-10 text-xs">
-          This page is protected by Google <span className=" underline cursor-pointer " title="FUCK reCAPTCHA  ">reCAPTCHA</span>  to ensure you're not a bot.
-          Learn more.
+          This page is protected by Google{" "}
+          <span className=" underline cursor-pointer " title="FUCK reCAPTCHA  ">
+            reCAPTCHA
+          </span>{" "}
+          to ensure you're not a bot. Learn more.
         </p>
       </div>
     </div>

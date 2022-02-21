@@ -5,7 +5,14 @@ import { useUserContext } from "../context/userContext";
 import Welcome from "../components/home/Welcome";
 import AccordianPage from "../components/home/AccordianPage";
 import Footer from "../components/Footer";
+import { useRouter } from "next/router";
 export default function Home() {
+  const { user } = useUserContext();
+  // console.log(user);
+  const router = useRouter();
+  if (user != null) {
+    router.push("/home");
+  }
   return (
     <div>
       <Head>

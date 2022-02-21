@@ -6,7 +6,7 @@ function AccordianPage() {
   return (
     <div className=" py-20 text-white bg-black">
       <div className=" mx-auto text-center">
-        <h1 className=" text-5xl font-bold">Frequently Asked Questions</h1>
+        <h1 className=" text-4xl sm:text-5xl font-bold">Frequently Asked Questions</h1>
 
         <div className=" mt-16 space-y-3">
           <Accordian
@@ -41,7 +41,7 @@ You can also download your favourite shows with the iOS, Android, or Windows 10 
 Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see."
           />
         </div>
-        <p className=" text-xl mt-20">Ready to watch? Enter your email to create or restart your membership.</p>
+        <p className=" text-xl px-5 mt-20">Ready to watch? Enter your email to create or restart your membership.</p>
         <div className=" text-center mx-auto mt-16  w-3/4 text-white md:w-[800px]">
         <div className="  pb-20">
             <form className=" w-full flex flex-col sm:flex-row  justify-center mt-5">

@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import Footer from "../components/Footer";
 import { useUserContext } from "../context/userContext";
 import SignUp from "../components/SignupComponent";
-
+import { useRouter } from "next/router";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import SigninComponent from "../components/SigninComponent";
@@ -17,7 +17,14 @@ function Register() {
   useEffect(() => {
     AOS.init();
   });
+  const router = useRouter();
+
   const { sign, setSign } = useUserContext();
+
+  if(sign != null){
+    router.push('/home')
+  }
+  
   return (
     <div>
       <Head>

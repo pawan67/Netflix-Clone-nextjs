@@ -1,12 +1,12 @@
-
+import { useRouter } from "next/router";
 import React, { useRef } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useUserContext } from "../context/userContext";
 function SigninComponent() {
   const emailRef = useRef();
-
+  const router = useRouter();
   const passwordRef = useRef();
-  const { sign, setSign } = useUserContext();
+  const { sign, setSign, user } = useUserContext();
   const { signInUser, forgotPassword, signInWithGoogle } = useUserContext();
   const onSubmit = (e) => {
     e.preventDefault();
@@ -14,12 +14,14 @@ function SigninComponent() {
     const password = passwordRef.current.value;
     if (email && password) signInUser(email, password);
   };
+  if (user != null) {
+    router.push("/home");
+  }
   return (
     <div>
-      
       <div>
         <div
-          data-aos="zoom-in"
+          data-aos="fade-right"
           className=" text-white mx-auto p-16  bg-black/50 backdrop-blur-md rounded-2xl shadow-xl shadow-[#070000]  w-full sm:w-[460px] "
         >
           <h1 className=" text-white text-2xl font-medium mb-5">Sign In</h1>

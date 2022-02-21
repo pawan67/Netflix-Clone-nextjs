@@ -18,7 +18,7 @@ function Accordian({question, answers}) {
         />
       </div> 
       <div
-        className={` transition-all ${
+        className={`  ${
           acc ? "p-7  " : " p-0 h-0"
         }  text-left text-2xl   overflow-hidden`}
       >
