@@ -18,9 +18,7 @@ function Register() {
   const router = useRouter();
   useEffect(() => {
     AOS.init();
-    if (sign != null) {
-      router.push("/home");
-    }
+   
   });
 
   const { sign, setSign } = useUserContext();
