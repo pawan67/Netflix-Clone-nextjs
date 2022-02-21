@@ -19,10 +19,10 @@ function SignUp() {
     if (email && name && password) {
       registerUser(email, name, password);
     }
-    if (user != null) {
-      router.push("/home");
-    }
   };
+  if (user != null) {
+    router.push("/home");
+  }
   return (
     <div>
       <div
