@@ -15,18 +15,20 @@ import "aos/dist/aos.css"; // You can also use <link> for styles
 function HomePage() {
   const { logOutUser, user } = useUserContext();
   const router = useRouter();
+  console.log(user);
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
 
     dispatch(fetchAsyncTrendingMovies());
   }, [dispatch]);
-
-  if (user == null) {
-    setTimeout(() => {
+  useEffect(() => {
+    if (user === null) {
       router.push("/");
-    }, 2000);
-  }
+    }else{
+      router.push("/home");
+    }
+  }, [user]);
 
   return (
     <>

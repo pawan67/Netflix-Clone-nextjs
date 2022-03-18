@@ -7,7 +7,7 @@ import { BsPlayFill } from "react-icons/bs";
 import Image from "next/image";
 const Card = ({ data }) => {
   const [isHover, setIsHover] = useState(false);
-  console.log(data);
+ 
   return (
     <div
       onMouseEnter={() => setIsHover(true)}

@@ -6,6 +6,7 @@ import { settings } from "../common/settings";
 import { useSelector } from "react-redux";
 import { getAllMovies } from "../features/movieSlice";
 import movieApi from "../common/apis/movieApi";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import Card from "./Card";
 
@@ -14,11 +15,9 @@ function Discover() {
   const [data, setData] = useState([{}]);
   useEffect(() => {
     movieApi.get(`/trending/movie/day?api_key=${APIkey}`).then((res) => {
-      console.log(res);
       setData(res.data.results);
-      console.log(data);
     });
-  }, []);
+  }, [data]);
   if (!data) {
     return (
       <div>
