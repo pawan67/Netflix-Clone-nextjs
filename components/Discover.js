@@ -20,7 +20,14 @@ function Discover() {
     });
   }, []);
   if (!data) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <div className=" text-xl flex space-x-2 items-center text-white">
+          <AiOutlineLoading3Quarters className=" animate-spin" />
+          <p>Loading</p>
+        </div>
+      </div>
+    );
   }
 
   return (
