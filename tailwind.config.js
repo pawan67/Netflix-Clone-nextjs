@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'welcome': "url('/images/Netflix-Background.jpg')",
+        welcome: "url('/images/Netflix-Background.jpg')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

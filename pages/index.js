@@ -9,8 +9,9 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 export default function Home() {
   const { user } = useUserContext();
-  // console.log(user);
+
   const router = useRouter();
+
   useEffect(() => {
     if (user != null) {
       router.push("/home");

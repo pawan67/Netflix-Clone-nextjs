@@ -25,6 +25,7 @@ function SignUp() {
   }
   return (
     <div>
+      
       <div
         data-aos="fade-right"
         className=" text-white mx-auto p-16  bg-black/50 backdrop-blur-md rounded-2xl shadow-xl shadow-[#070000] w-full sm:w-[460px] "
