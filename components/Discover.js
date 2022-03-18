@@ -31,7 +31,7 @@ function Discover() {
 
       <Slider {...settings}>
         {data.slice(0, 7).map((item) => (
-          <Card data={item} />
+          <Card key={item.id} data={item} />
         ))}
       </Slider>
       <div className=" px-5  my-5 text-white text-xl sm:text-2xl font-medium">
@@ -39,7 +39,7 @@ function Discover() {
       </div>
       <Slider {...settings}>
         {data.slice(7, 14).map((item) => (
-          <Card data={item} />
+          <Card key={item.id} data={item} />
         ))}
       </Slider>
       <div className=" px-5  my-5 text-white  text-xl sm:text-2xl font-medium">
@@ -47,7 +47,7 @@ function Discover() {
       </div>
       <Slider {...settings}>
         {data.slice(14, 20).map((item) => (
-          <Card data={item} />
+          <Card key={item.id} data={item} />
         ))}
       </Slider>
     </div>
