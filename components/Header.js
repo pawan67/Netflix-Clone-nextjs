@@ -29,7 +29,6 @@ function Header() {
         setDown(false);
       }
       setScrollPosition(currentScrollY);
-      
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -43,7 +42,7 @@ function Header() {
       >
         <div className="  flex px-5 sm:px-10 items-center justify-between">
           <div className=" text-white flex items-center">
-            <Link href="/">
+            <Link href="/home">
               <div className=" h-20 flex items-center">
                 <img
                   className="  sm:hidden w-14"
@@ -59,9 +58,21 @@ function Header() {
             </Link>
             <div className="hidden sm:block">
               <div className="  ml-5  text-lg flex space-x-5">
-                <p>Home</p>
-                <p>Movies</p>
-                <p>Tv Shows</p>
+                <p
+                  onClick={() => router.push("/home")}
+                  className=" cursor-pointer hover:scale-105 transition-all"
+                >
+                  Home
+                </p>
+                <p
+                  onClick={() => router.push("/movies")}
+                  className=" cursor-pointer hover:scale-105 transition-all"
+                >
+                  Movies
+                </p>
+                <p className=" cursor-pointer hover:scale-105 transition-all">
+                  Tv Shows
+                </p>
               </div>
             </div>
           </div>
@@ -72,14 +83,14 @@ function Header() {
                   onChange={(e) => setSearchText(e.target.value)}
                   placeholder=" Search movies, series"
                   className={` ${
-                    isSearch ? " w-auto p-1 border" : " w-0 "
+                    isSearch ? " w-40 sm:w-56 p-1 border" : " w-0 "
                   }  outline-none transition-all text-white bg-transparent px-2  rounded-lg `}
                   type="text"
                 />
               </form>
               <FiSearch
                 onClick={() => setIsSearch(!isSearch)}
-                className=" text-white  text-2xl "
+                className=" cursor-pointer text-white  text-2xl "
               />
             </div>
             <div
@@ -125,8 +136,8 @@ function Header() {
         } absolute w-screen h-screen bg-gradient-to-b z-30  from-black`}
       >
         <div className=" mt-20 z-20  text-xl text-white flex flex-col justify-center items-center space-y-5 ">
-          <p>Home</p>
-          <p>Movies</p>
+          <p onClick={() => router.push("/home")}>Home</p>
+          <p onClick={() => router.push("/movies")}>Movies</p>
           <p>Tv Shows</p>
         </div>
         <div onClick={() => setMenu(false)} className=" h-full"></div>

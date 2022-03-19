@@ -6,7 +6,7 @@ function SigninComponent() {
   const emailRef = useRef();
   const router = useRouter();
   const passwordRef = useRef();
-  const { sign, setSign, user } = useUserContext();
+  const { sign, setSign, user, loading, SignInAnonymously } = useUserContext();
   const { signInUser, forgotPassword, signInWithGoogle } = useUserContext();
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ function SigninComponent() {
     if (email && password) signInUser(email, password);
   };
   if (user != null) {
-    router.push("/home");
+    router.push("/splash");
   }
   return (
     <div>
@@ -39,12 +39,30 @@ function SigninComponent() {
               type="password"
               placeholder="Password"
             />
-            <button
-              type="submit"
-              className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
-            >
-              Sign In
-            </button>
+            {loading ? (
+              <button
+                type="submit"
+                className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
+              >
+                Loading...
+              </button>
+            ) : (
+              <>
+                <button
+                  type="submit"
+                  className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
+                >
+                  Sign Up
+                </button>
+                <button
+                  onClick={() => SignInAnonymously()}
+                  type="submit"
+                  className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
+                >
+                  Sign Up Anonymously
+                </button>
+              </>
+            )}
           </form>
           <p
             onClick={() => setSign(false)}

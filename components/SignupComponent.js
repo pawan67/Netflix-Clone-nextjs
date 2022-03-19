@@ -8,7 +8,7 @@ function SignUp() {
   const emailRef = useRef();
   const nameRef = useRef();
   const passwordRef = useRef();
-  const { sign, setSign } = useUserContext();
+  const { sign, setSign, loading, SignInAnonymously } = useUserContext();
   const { registerUser, error, signInWithGoogle, user } = useUserContext();
 
   const onSubmit = (e) => {
@@ -21,11 +21,10 @@ function SignUp() {
     }
   };
   if (user != null) {
-    router.push("/home");
+    router.push("/splash");
   }
   return (
     <div>
-      
       <div
         data-aos="fade-right"
         className=" text-white mx-auto p-16  bg-black/50 backdrop-blur-md rounded-2xl shadow-xl shadow-[#070000] w-full sm:w-[460px] "
@@ -33,6 +32,7 @@ function SignUp() {
         <h1 className=" text-white text-2xl font-medium mb-5">Sign Up</h1>
         <form onSubmit={onSubmit} className=" space-y-5 flex flex-col">
           <input
+            disabled={loading}
             ref={emailRef}
             className=" outline-none rounded-md p-4 bg-[#333333]  "
             type="text"
@@ -40,23 +40,43 @@ function SignUp() {
           />
 
           <input
+            disabled={loading}
             ref={nameRef}
             className=" outline-none rounded-md p-4 bg-[#333333]  "
             type="text"
             placeholder="Name"
           />
           <input
+            disabled={loading}
             ref={passwordRef}
             className=" outline-none rounded-md p-4 bg-[#333333]  "
             type="password"
             placeholder="Password"
           />
-          <button
-            type="submit"
-            className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
-          >
-            Sign Up
-          </button>
+          {loading ? (
+            <button
+              type="submit"
+              className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
+            >
+              Loading...
+            </button>
+          ) : (
+            <>
+              <button
+                type="submit"
+                className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
+              >
+                Sign Up
+              </button>
+              <button
+                onClick={() => SignInAnonymously()}
+                type="submit"
+                className=" active:scale-95 mt-3 text-white  rounded-md font-semibold p-4 w-full bg-[#e50914]"
+              >
+                Sign Up Anonymously
+              </button>
+            </>
+          )}
         </form>
         <p
           onClick={() => setSign(true)}

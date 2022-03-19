@@ -58,8 +58,8 @@ const SearchPage = () => {
       <div className=" bg-black">
         <div className=" overflow-x-hidden bg-black min-h-screen">
           <Header />
-          <div className=" text-white text-2xl pt-32 pb-5 sm:pt-20 pl-8 sm:pl-10 sm:py-10">
-            Search results for {SearchTerm}
+          <div className=" text-white text-xl md:text-2xl pt-36 pb-5 sm:pt-24 pl-8 sm:pl-12 sm:py-10">
+            Search results for {SearchTerm} :
           </div>
           <div className=" justify-center gap-5 flex flex-wrap ">
             {data &&

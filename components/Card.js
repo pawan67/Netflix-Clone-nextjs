@@ -3,13 +3,13 @@ import { BASE_IMG_URL } from "../common/requests";
 import { FiInfo } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { BsPlayFill } from "react-icons/bs";
-
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { useUserContext } from "../context/userContext";
 const Card = ({ data }) => {
   const { isModal, setIsModal } = useUserContext();
   const { ModalData, setModalData } = useUserContext();
-
+  const router = useRouter();
   const [isHover, setIsHover] = useState(false);
   const [imageError, setImageError] = useState(false);
   const fallBackSrc =
@@ -38,7 +38,10 @@ const Card = ({ data }) => {
             isHover ? "absolute transition-all" : "hidden transition-all"
           } transition-all left-10  sm:left-5 flex items-center space-x-2 bottom-5`}
         >
-          <div className="px-4 py-2 font-bold flex  justify-center items-center  space-x-1 rounded-md bg-[#d41420] ">
+          <div
+            onClick={() => router.push("/splash")}
+            className="px-4 py-2 font-bold flex  justify-center items-center  space-x-1 rounded-md bg-[#d41420] "
+          >
             <div>Play</div>
             <BsPlayFill />
           </div>

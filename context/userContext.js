@@ -7,6 +7,7 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  signInAnonymously,
 } from "firebase/auth";
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
@@ -64,6 +65,14 @@ export const UserContextProvider = ({ children }) => {
       .finally(() => setLoading(false));
   };
 
+  const SignInAnonymously = () => {
+    setLoading(true);
+    signInAnonymously(auth)
+      .then((res) => console.log(res))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  };
+
   const contextValue = {
     user,
     loading,
@@ -79,6 +88,7 @@ export const UserContextProvider = ({ children }) => {
     setIsModal,
     ModalData,
     setModalData,
+    SignInAnonymously,
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 //FiInfo
+import { useRouter } from "next/router";
 import { FiInfo } from "react-icons/fi";
 import { BsPlayFill } from "react-icons/bs";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -8,7 +9,7 @@ import { useUserContext } from "../context/userContext";
 function Banner() {
   const { isModal, setIsModal } = useUserContext();
   const { ModalData, setModalData } = useUserContext();
-
+  const router = useRouter();
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -52,11 +53,14 @@ function Banner() {
               {data.title}
             </h1>
             <div className=" flex space-x-2 mt-5 text-white font-semibold ">
-              <div className=" flex items-center space-x-2 justify-center text-base text-center py-2 rounded-md bg-[#e50914]/90 cursor-pointer w-36 ">
+              <div
+                onClick={() => router.push("/splash")}
+                className=" flex items-center space-x-2 justify-center text-base text-center py-2 rounded-md bg-[#e50914]/90 active:scale-95 cursor-pointer w-36 "
+              >
                 <BsPlayFill />
                 <p>Play</p>
               </div>
-              <div className=" cursor-pointer flex items-center space-x-2 justify-center text-base text-center  py-2 rounded-md bg-[#6d6d6e]/80  w-36 ">
+              <div className=" cursor-pointer flex items-center space-x-2 justify-center text-base text-center  py-2 rounded-md active:scale-95 bg-[#6d6d6e]/80  w-36 ">
                 <FiInfo />
                 <p
                   onClick={() => {
