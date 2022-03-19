@@ -7,6 +7,8 @@ import SearchCard from "../../components/SearchCard";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import DusraFooter from "../../components/DusraFooter";
 import Card from "../../components/Card";
+import Head from "next/head";
+import Modal from "../../components/Modal";
 const SearchPage = () => {
   const router = useRouter();
   const SearchTerm = router.query.searchTerm;
@@ -49,19 +51,27 @@ const SearchPage = () => {
     );
   }
   return (
-    <div className=" bg-black">
-      <div className=" overflow-x-hidden bg-black min-h-screen">
-        <Header />
-        <div className=" text-white text-2xl pt-32 pb-5 sm:pt-20 pl-8 sm:pl-10 sm:py-10">
-          Search results for {SearchTerm}
+    <>
+      <Head>
+        <title>Showing Results for - {SearchTerm}</title>
+      </Head>
+      <div className=" bg-black">
+        <div className=" overflow-x-hidden bg-black min-h-screen">
+          <Header />
+          <div className=" text-white text-2xl pt-32 pb-5 sm:pt-20 pl-8 sm:pl-10 sm:py-10">
+            Search results for {SearchTerm}
+          </div>
+          <div className=" justify-center gap-5 flex flex-wrap ">
+            {data &&
+              data.data.results.map((item) => (
+                <Card data={item} key={item.id} />
+              ))}
+          </div>
         </div>
-        <div className=" justify-center gap-5 flex flex-wrap ">
-          {data &&
-            data.data.results.map((item) => <Card data={item} key={item.id} />)}
-        </div>
+        <DusraFooter />
+        <Modal />
       </div>
-      <DusraFooter />
-    </div>
+    </>
   );
 };
 

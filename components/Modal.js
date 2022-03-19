@@ -21,16 +21,19 @@ const Modal = ({ data }) => {
             data-aos="fade-in"
             className=" rounded-xl bg-[#181818] w-[90vw] sm:w-[600px]"
           >
-            <img
-              className=" rounded-lg rounded-b-none w-full h-full"
-              src={`https://image.tmdb.org/t/p/original${ModalData.backdrop_path}`}
-              alt=""
-            />
+            <div className=" relative">
+              <img
+                className="  rounded-lg rounded-b-none w-full h-full"
+                src={`https://image.tmdb.org/t/p/original${ModalData.backdrop_path}`}
+                alt=""
+              />
+              <div className=" cursor-pointer left-5 bottom-5 bg-[#d41420] text-white p-3 rounded-md font-semibold   absolute">Watch now</div>
+            </div>
             <div className=" p-10">
               <h1 className=" text-white text-2xl font-bold">
                 {ModalData.title}
               </h1>
-              <h2 className=" text-white mt-5 text-lg font-medium">
+              <h2 className=" line-clamp-4 text-white mt-5 text-lg font-medium">
                 {ModalData.overview}
               </h2>
 

@@ -16,7 +16,7 @@ import Modal from "../components/Modal";
 function HomePage() {
   const { logOutUser, user } = useUserContext();
   const router = useRouter();
-  
+
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
@@ -26,7 +26,7 @@ function HomePage() {
   useEffect(() => {
     if (user === null) {
       router.push("/");
-    }else{
+    } else {
       router.push("/home");
     }
   }, [user]);
@@ -34,6 +34,7 @@ function HomePage() {
   return (
     <>
       <Head>
+        <title>Netflix - Watch TV shows Online, Watch Movies Online</title>
         <link
           rel="stylesheet"
           type="text/css"
@@ -51,7 +52,7 @@ function HomePage() {
         <Banner />
         <Discover />
         <DusraFooter />
-        <Modal/>
+        <Modal />
       </div>
     </>
   );
