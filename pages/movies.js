@@ -10,7 +10,7 @@ import DiscoverMovies from "../components/DiscoverMovies";
 import { useUserContext } from "../context/userContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
-const movies = () => {
+const Movies = () => {
   const { logOutUser, user } = useUserContext();
   const router = useRouter();
 
@@ -52,4 +52,4 @@ const movies = () => {
   );
 };
 
-export default movies;
+export default Movies;

@@ -30,10 +30,18 @@ function Banner() {
 
   if (loading) {
     return (
-      <div className=" bg-black flex justify-center items-center h-screen w-screen">
+      <div className=" bg-black flex  justify-start ml-5 md:ml-20 items-center h-screen w-screen">
         <div className=" text-xl flex space-x-2 items-center text-white">
-          <AiOutlineLoading3Quarters className=" animate-spin" />
-          <p>Loading</p>
+          <div className="   rounded-md mx-auto mt-20">
+            <div className="flex animate-pulse flex-col space-y-4  h-full justify-center ">
+              <div className=" w-[210px] h-14 rounded-lg bg-slate-300"></div>
+              <div className=" flex space-x-4">
+                <div className=" rounded-lg w-24 h-8 bg-slate-300"></div>
+                <div className=" rounded-lg w-24 h-8 bg-slate-300"></div>
+              </div>
+              <div className=" w-[320px] rounded-lg h-14 bg-slate-200"></div>
+            </div>
+          </div>
         </div>
       </div>
     );
