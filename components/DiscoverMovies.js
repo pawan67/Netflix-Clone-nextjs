@@ -4,6 +4,7 @@ import movieApi from "../common/apis/movieApi";
 import { APIkey } from "../common/apis/tmdbApiKey";
 import { settings } from "../common/settings";
 import Card from "./Card";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const DiscoverMovies = () => {
   const [data, setData] = useState([{}]);
