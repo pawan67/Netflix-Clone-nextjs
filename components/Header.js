@@ -29,7 +29,7 @@ function Header() {
         setDown(false);
       }
       setScrollPosition(currentScrollY);
-      console.log(down);
+      
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

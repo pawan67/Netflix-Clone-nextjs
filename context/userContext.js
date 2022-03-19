@@ -17,6 +17,9 @@ export const UserContextProvider = ({ children }) => {
   const [loading, setLoading] = useState();
   const [error, setError] = useState("");
   const [sign, setSign] = useState(false);
+  const [isModal, setIsModal] = useState(false);
+  const [ModalData, setModalData] = useState({});
+
   useEffect(() => {
     const unsub = setLoading(true);
     onAuthStateChanged(auth, (res) => {
@@ -72,6 +75,10 @@ export const UserContextProvider = ({ children }) => {
     signInWithGoogle,
     sign,
     setSign,
+    isModal,
+    setIsModal,
+    ModalData,
+    setModalData,
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

@@ -5,7 +5,7 @@ import { useRouter } from "next/dist/client/router";
 import { APIkey } from "../../common/apis/tmdbApiKey";
 import SearchCard from "../../components/SearchCard";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-
+import DusraFooter from "../../components/DusraFooter";
 import Card from "../../components/Card";
 const SearchPage = () => {
   const router = useRouter();
@@ -40,23 +40,27 @@ const SearchPage = () => {
         <Header />
         <div className=" h-screen w-screen text-white  flex justify-center items-center">
           <div className=" px-10 text-xl font-medium">
-            No results found for <span className=" underline">{SearchTerm}</span>  are you sure you typed it
-            correctly?
+            No results found for{" "}
+            <span className=" underline">{SearchTerm}</span> are you sure you
+            typed it correctly?
           </div>
         </div>
       </div>
     );
   }
   return (
-    <div className=" overflow-x-hidden bg-black min-h-screen">
-      <Header />
-      <div className=" text-white text-2xl pt-32 pb-5 sm:pt-20 pl-8 sm:pl-10 sm:py-10">
-        Search results for {SearchTerm}
+    <div className=" bg-black">
+      <div className=" overflow-x-hidden bg-black min-h-screen">
+        <Header />
+        <div className=" text-white text-2xl pt-32 pb-5 sm:pt-20 pl-8 sm:pl-10 sm:py-10">
+          Search results for {SearchTerm}
+        </div>
+        <div className=" justify-center gap-5 flex flex-wrap ">
+          {data &&
+            data.data.results.map((item) => <Card data={item} key={item.id} />)}
+        </div>
       </div>
-      <div className=" justify-center gap-5 flex flex-wrap ">
-        {data &&
-          data.data.results.map((item) => <Card data={item} key={item.id} />)}
-      </div>
+      <DusraFooter />
     </div>
   );
 };

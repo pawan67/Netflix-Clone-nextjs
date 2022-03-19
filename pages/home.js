@@ -11,11 +11,12 @@ import { useUserContext } from "../context/userContext";
 import { fetchAsyncTrendingMovies } from "../features/movieSlice";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import Modal from "../components/Modal";
 // ..
 function HomePage() {
   const { logOutUser, user } = useUserContext();
   const router = useRouter();
-  console.log(user);
+  
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
@@ -50,6 +51,7 @@ function HomePage() {
         <Banner />
         <Discover />
         <DusraFooter />
+        <Modal/>
       </div>
     </>
   );
