@@ -4,7 +4,7 @@ export const settings = {
   slidesToShow: 5,
   slidesToScroll: 4,
   initialSlide: 0,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 5000,
   autoplay: true,
 
   responsive: [
@@ -15,7 +15,7 @@ export const settings = {
         slidesToScroll: 3,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
       },
     },
     {
@@ -25,7 +25,7 @@ export const settings = {
         slidesToScroll: 3,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
       },
     },
     {
@@ -35,14 +35,14 @@ export const settings = {
         slidesToScroll: 2,
         initialSlide: 2,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
       },
     },
     {
       breakpoint: 480,
       settings: {
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
       },

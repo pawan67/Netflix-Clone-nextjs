@@ -18,7 +18,7 @@ function Banner() {
       )
       .then((res) => {
         const data = res.data;
-        setData(data.results[RandNum]);
+        setData(data.results[9]);
         setLoading(false);
       });
   }, []);

@@ -7,7 +7,11 @@ import { BsPlayFill } from "react-icons/bs";
 import Image from "next/image";
 const Card = ({ data }) => {
   const [isHover, setIsHover] = useState(false);
- 
+  const [imageError, setImageError] = useState(false);
+  const fallBackSrc =
+    "https://res.cloudinary.com/dewctbby3/image/upload/v1647663227/7dc497e2-4975-11ec-a9ce-066b49664af6_cm_1440w_dugogx.jpg";
+
+  const src = `${BASE_IMG_URL}${data.backdrop_path}`;
   return (
     <div
       onMouseEnter={() => setIsHover(true)}
@@ -16,7 +20,8 @@ const Card = ({ data }) => {
     >
       <Image
         data-aos="zoom-in"
-        src={`${BASE_IMG_URL}${data.backdrop_path}`}
+        src={imageError ? fallBackSrc : src}
+        onError={() => setImageError(true)}
         alt={data.title}
         className=" rounded-lg"
         width={350}
