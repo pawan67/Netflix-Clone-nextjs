@@ -30,16 +30,19 @@ function Banner() {
 
   if (loading) {
     return (
-      <div className=" bg-black flex  justify-start ml-5 md:ml-20 items-center h-screen w-screen">
+      <div className=" bg-black  flex  justify-start ml-5 md:ml-20 items-center h-screen w-screen">
         <div className=" text-xl flex space-x-2 items-center text-white">
           <div className="   rounded-md mx-auto mt-20">
             <div className="flex animate-pulse flex-col space-y-4  h-full justify-center ">
-              <div className=" w-[210px] h-14 rounded-lg bg-slate-300"></div>
+              <div className="  w-[210px] h-10 sm:h-14 rounded-lg bg-slate-300"></div>
               <div className=" flex space-x-4">
-                <div className=" rounded-lg w-24 h-8 bg-slate-300"></div>
-                <div className=" rounded-lg w-24 h-8 bg-slate-300"></div>
+                <div className=" rounded-md sm:rounded-lg w-24 h-5 sm:h-8 bg-slate-300"></div>
+                <div className=" rounded-md sm:rounded-lg w-24 h-5 sm:h-8 bg-slate-300"></div>
               </div>
-              <div className=" w-[320px] rounded-lg h-14 bg-slate-200"></div>
+              <div className=" w-[320px] p-2 rounded-lg h-14 bg-slate-200">
+                <div className=" bg-slate-300 w-full rounded-sm h-4"></div>
+                <div className=" mt-2 bg-slate-300 w-full rounded-sm h-4"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -54,10 +57,10 @@ function Banner() {
         }}
         className={`flex px-10 sm:px-20  relative    items-center bg-cover bg-center h-screen sm:h-[90vh] rounded-b-xl   `}
       >
-        <div className=" absolute w-full h-32 bg-gradient-to-t from-black  to-transparent bottom-0 left-0 ring-0 z-20" />
+        <div className="  absolute w-full h-52 bg-gradient-to-t from-black  to-transparent bottom-0 left-0 ring-0 z-20" />
         <div>
           <div data-aos="fade-up" className="    w-3/4">
-            <h1 className=" drop-shadow-lg text-white text-5xl sm:text-6xl font-bold">
+            <h1 className=" drop-shadow-lg text-white text-4xl sm:text-6xl font-bold">
               {data.title}
             </h1>
             <div className=" flex space-x-2 mt-5 text-white font-semibold ">
@@ -81,7 +84,7 @@ function Banner() {
                 </p>
               </div>
             </div>
-            <div className=" -z-20 w-[90%] sm:w-2/4 text-lg  sm:text-2xl mt-5 text-white ">
+            <div className=" -z-20 w-[90%] sm:w-2/4 text-base  sm:text-2xl mt-5 text-white ">
               <p className=" line-clamp-3 drop-shadow-lg">{data.overview}</p>
             </div>
           </div>

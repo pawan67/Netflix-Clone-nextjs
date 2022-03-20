@@ -9,7 +9,7 @@ const Splash = () => {
     }, 200);
     setTimeout(() => {
       router.push("/home");
-    }, 4000);
+    }, 4600);
   });
   return (
     <div className=" h-screen">

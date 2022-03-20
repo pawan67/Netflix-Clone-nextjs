@@ -1,15 +1,15 @@
 import React from "react";
 import { useUserContext } from "../context/userContext";
-
+import { useRouter} from 'next/router'
+import { RiCloseCircleLine } from "react-icons/ri";
 const Modal = ({ data }) => {
   const { isModal, setIsModal } = useUserContext();
   const { ModalData, setModalData } = useUserContext();
-
+  const router = useRouter();
   return (
     <div>
       {" "}
       <div
-        onClick={() => setIsModal(false)}
         className={` ${
           isModal
             ? " transition-all fixed flex justify-center items-center bottom-0 top-0 left-0 backdrop-blur-sm right-0 z-50"
@@ -27,7 +27,18 @@ const Modal = ({ data }) => {
                 src={`https://image.tmdb.org/t/p/original${ModalData.backdrop_path}`}
                 alt=""
               />
-              <div className=" cursor-pointer left-5 bottom-5 bg-[#d41420] text-white p-3 rounded-md font-semibold   absolute">Watch now</div>
+              <div
+                onClick={() => setIsModal(false)}
+                className=" absolute top-3 right-3 text-3xl sm:text-4xl text-white cursor-pointer drop-shadow-md  "
+              >
+                <RiCloseCircleLine />
+              </div>
+              <div
+                onClick={() => router.push("/splash")}
+                className=" active:scale-95 cursor-pointer left-5 bottom-5 bg-[#d41420] text-white p-3 rounded-md font-semibold   absolute"
+              >
+                Watch now
+              </div>
             </div>
             <div className=" p-10">
               <h1 className=" text-white text-2xl font-bold">
