@@ -40,11 +40,11 @@ const Modal = ({ data }) => {
                 Watch now
               </div>
             </div>
-            <div className=" p-10">
+            <div className=" p-7 sm:p-10">
               <h1 className=" text-white text-2xl font-bold">
                 {ModalData.title}
               </h1>
-              <h2 className=" line-clamp-4 text-white mt-5 text-lg font-medium">
+              <h2 className=" line-clamp-4 text-white mt-5 sm:text-lg font-medium">
                 {ModalData.overview}
               </h2>
 
