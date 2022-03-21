@@ -5,6 +5,7 @@ import { APIkey } from "../common/apis/tmdbApiKey";
 import { settings } from "../common/settings";
 import Card from "./Card";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import SearchCard from "./SearchCard";
 
 const DiscoverMovies = () => {
   const [data, setData] = useState([{}]);
@@ -16,7 +17,7 @@ const DiscoverMovies = () => {
       .then((res) => {
         setData(res.data.results);
       });
-  }, [data]);
+  }, []);
   if (!data) {
     return (
       <div>
@@ -52,7 +53,7 @@ const DiscoverMovies = () => {
         </div>
         <Slider {...settings}>
           {data.slice(14, 20).map((item) => (
-            <Card key={item.id} data={item} />
+            <SearchCard key={item.id} data={item} />
           ))}
         </Slider>
       </div>

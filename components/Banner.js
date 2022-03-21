@@ -55,7 +55,7 @@ function Banner() {
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
         }}
-        className={`flex px-10 sm:px-20  relative    items-center bg-cover bg-center h-screen sm:h-[90vh] rounded-b-xl   `}
+        className={`flex px-10 sm:px-20  relative    items-center bg-cover bg-center h-[90vh] rounded-b-xl   `}
       >
         <div className="  absolute w-full h-52 bg-gradient-to-t from-black  to-transparent bottom-0 left-0 ring-0 z-20" />
         <div>

@@ -16,6 +16,9 @@ const Card = ({ data }) => {
     "https://res.cloudinary.com/dewctbby3/image/upload/v1647663227/7dc497e2-4975-11ec-a9ce-066b49664af6_cm_1440w_dugogx.jpg";
 
   const src = `${BASE_IMG_URL}${data.backdrop_path}`;
+  if (!data) {
+    return <div> Loading </div>;
+  }
   return (
     <>
       <div
@@ -24,9 +27,7 @@ const Card = ({ data }) => {
         className=" relative flex justify-center text-white"
       >
         <Image
-          data-aos="zoom-in"
-          src={imageError ? fallBackSrc : src}
-          onError={() => setImageError(true)}
+          src={`${BASE_IMG_URL}${data.backdrop_path}`}
           alt={data.title}
           className=" rounded-lg"
           width={350}

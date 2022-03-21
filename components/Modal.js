@@ -12,14 +12,14 @@ const Modal = ({ data }) => {
       <div
         className={` ${
           isModal
-            ? " transition-all fixed flex justify-center items-center bottom-0 top-0 left-0 backdrop-blur-sm right-0 z-50"
+            ? " transition-all fixed flex justify-center items-center bottom-0 top-0 left-0  backdrop-brightness-50 backdrop-blur-sm right-0 z-50"
             : "hidden"
         }  `}
       >
         <div className="  ">
           <div
             data-aos="fade-in"
-            className=" rounded-xl bg-[#181818] w-[90vw] sm:w-[600px]"
+            className=" shadow-xl rounded-xl bg-[#181818] w-[90vw] sm:w-[600px]"
           >
             <div className=" relative">
               <img

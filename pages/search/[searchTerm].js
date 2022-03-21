@@ -8,8 +8,13 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import DusraFooter from "../../components/DusraFooter";
 import Card from "../../components/Card";
 import Head from "next/head";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Modal from "../../components/Modal";
 const SearchPage = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const router = useRouter();
   const SearchTerm = router.query.searchTerm;
   const [data, setData] = useState({});
@@ -64,7 +69,7 @@ const SearchPage = () => {
           <div className=" justify-center gap-5 flex flex-wrap ">
             {data &&
               data.data.results.map((item) => (
-                <Card data={item} key={item.id} />
+                <SearchCard data={item} key={item.id} />
               ))}
           </div>
         </div>

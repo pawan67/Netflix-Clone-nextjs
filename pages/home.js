@@ -20,9 +20,10 @@ function HomePage() {
   const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
-
+  },[]);
+  useEffect(() => {
     dispatch(fetchAsyncTrendingMovies());
-  }, [dispatch]);
+  }, []);
   useEffect(() => {
     if (user === null) {
       router.push("/");
