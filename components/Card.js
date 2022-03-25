@@ -19,6 +19,13 @@ const Card = ({ data }) => {
   if (!data) {
     return <div> Loading </div>;
   }
+   // id: ModalData.id,
+  // title: ModalData.title,
+  // backdrop_path: ModalData.backdrop_path,
+  // release_date: ModalData.release_date,
+  // vote_average: ModalData.vote_average,
+  // overview: ModalData.overview,
+  //`users/${user.uid}/watchlist`
   return (
     <>
       <div

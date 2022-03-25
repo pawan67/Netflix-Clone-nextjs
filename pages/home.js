@@ -15,6 +15,7 @@ import Modal from "../components/Modal";
 // ..
 function HomePage() {
   const { logOutUser, user } = useUserContext();
+  console.log(user);
   const router = useRouter();
 
   const dispatch = useDispatch();

@@ -1,10 +1,12 @@
 import React from "react";
 import { useUserContext } from "../context/userContext";
-import { useRouter} from 'next/router'
+import { useRouter } from "next/router";
 import { RiCloseCircleLine } from "react-icons/ri";
+import { IoAddCircleOutline } from "react-icons/io5";
 const Modal = ({ data }) => {
   const { isModal, setIsModal } = useUserContext();
   const { ModalData, setModalData } = useUserContext();
+  console.log(ModalData);
   const router = useRouter();
   return (
     <div>
@@ -33,11 +35,17 @@ const Modal = ({ data }) => {
               >
                 <RiCloseCircleLine />
               </div>
-              <div
-                onClick={() => router.push("/splash")}
-                className=" active:scale-95 cursor-pointer left-5 bottom-5 bg-[#d41420] text-white p-3 rounded-md font-semibold   absolute"
-              >
-                Watch now
+              <div className="left-5 flex items-center space-x-3 text-white bottom-5 absolute ">
+                <div
+                  onClick={() => router.push("/splash")}
+                  className=" active:scale-95 cursor-pointer  bg-[#d41420]  text-white p-3 rounded-md font-semibold   "
+                >
+                  Watch now
+                </div>
+                {/* <IoAddCircleOutline
+                  onClick={() => addToWatchList()}
+                  className=" cursor-pointer text-4xl"
+                /> */}
               </div>
             </div>
             <div className=" p-7 sm:p-10">
