@@ -10,8 +10,11 @@ const Splash = () => {
     }, 200);
     setTimeout(() => {
       router.push("/home");
-    }, 4600);
+    }, 4500);
   });
+   
+  // Credit:  https://codepen.io/claudio_bonfati/pen/mdryxPv by claudio bonfati
+  
   return (
     <>
     <Head>

@@ -24,8 +24,7 @@ const SearchCard = ({ data }) => {
         className=" relative flex justify-center text-white"
       >
         <Image
-          data-aos="zoom-in"
-          data-aos-delay="300"
+          
           src={imageError ? fallBackSrc : src}
           onError={() => setImageError(true)}
           alt={data.title}

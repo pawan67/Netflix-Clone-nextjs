@@ -19,7 +19,7 @@ function Banner() {
     axios
 
       .get(
-        `https://api.themoviedb.org/3/trending/movie/week?api_key=d4dd95b13ad35a11e9d9a98a3f2c901a`
+        `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
       )
       .then((res) => {
         const data = res.data;

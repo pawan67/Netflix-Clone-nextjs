@@ -83,8 +83,8 @@ function Header() {
                   onChange={(e) => setSearchText(e.target.value)}
                   placeholder=" Search movies, series"
                   className={` ${
-                    isSearch ? " w-40 sm:w-56 p-1 border" : " w-0 "
-                  }  outline-none transition-all text-white bg-transparent px-2  rounded-lg `}
+                    isSearch ? " w-40 sm:w-56 p-1 border" : " w-0  "
+                  }  outline-none transition-all text-white bg-transparent  placeholder:text-white px-2  rounded-lg `}
                   type="text"
                 />
               </form>
