@@ -3,6 +3,7 @@ import { useUserContext } from "../context/userContext";
 import { useRouter } from "next/router";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { BASE_IMG_URL_500w } from "../common/requests";
 const Modal = ({ data }) => {
   const { isModal, setIsModal } = useUserContext();
   const { ModalData, setModalData } = useUserContext();
@@ -26,7 +27,7 @@ const Modal = ({ data }) => {
             <div className=" relative">
               <img
                 className="  rounded-lg rounded-b-none w-full h-full"
-                src={`https://image.tmdb.org/t/p/original${ModalData.backdrop_path}`}
+                src={`${BASE_IMG_URL_500w}${ModalData.backdrop_path}`}
                 alt=""
               />
               <div

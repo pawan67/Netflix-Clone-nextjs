@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BASE_IMG_URL } from "../common/requests";
+import { BASE_IMG_URL, BASE_IMG_URL_500w } from "../common/requests";
 import { FiInfo } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { BsPlayFill } from "react-icons/bs";
@@ -19,7 +19,7 @@ const Card = ({ data }) => {
   if (!data) {
     return <div> Loading </div>;
   }
-   // id: ModalData.id,
+  // id: ModalData.id,
   // title: ModalData.title,
   // backdrop_path: ModalData.backdrop_path,
   // release_date: ModalData.release_date,
@@ -34,7 +34,7 @@ const Card = ({ data }) => {
         className=" relative flex justify-center text-white"
       >
         <Image
-          src={`${BASE_IMG_URL}${data.backdrop_path}`}
+          src={`${BASE_IMG_URL_500w}${data.backdrop_path}`}
           alt={data.title}
           className=" rounded-lg"
           width={350}
